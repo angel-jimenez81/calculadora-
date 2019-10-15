@@ -1,0 +1,83 @@
+#include<stdlib.h>
+#include<conio.h>
+#include<stdio.h>
+
+void imprimir_menu();
+void leer_opcion(int& opt);
+
+int suma(int a, int b);
+int resta(int a, int b);
+int multiplicacion(int a, int b);
+int division(int a, int b);
+int suma(int a, int b){
+    return a+b;
+}
+int resta(int a, int b){
+return a-b;
+}
+int multiplicacion(int a, int b){
+return a*b;
+}
+int division(int a, int b){
+    while(b==0){
+    printf("0 no es un valor divisible: \n");
+    scanf("%d",& b);
+    }
+    return a/b;
+}
+int leer_valor(){
+    int temp;
+    printf("Introduce el valor: ");
+    scanf("%d",& temp);
+    return temp;
+}
+int main(){
+    char repeticion;
+    int a, b, c;
+    int opt;
+    int leer_valor();
+    do{
+    imprimir_menu();
+    leer_opcion(opt);
+
+    a= leer_valor();
+    b= leer_valor();
+
+    switch(opt){
+    case 1:
+        c=suma(a, b);
+        break;
+    case 2:
+        c=resta(a, b);
+        break;
+    case 3:
+        c=multiplicacion(a, b);
+        break;
+    case 4:
+        c=division(a, b);
+        break;
+    default:
+    printf("opcion invalida");
+    }
+    printf("El resultado es: %d\n", c);
+    printf("¿Quieres hacer otra operacion?\n");
+    printf("S N");
+    scanf("%d", &b);
+    repeticion=getch();
+}
+while(repeticion=='S'||repeticion=='s');
+return 0;
+    void leer_opcion(int& opt);
+}
+    void imprimir_menu(){
+printf("1.- Suma\n");
+printf("2.- Resta\n");
+printf("3.- Multiplicacion\n");
+printf("4.- Division\n");
+    }
+int leer_opcion();
+void leer_opcion(int & opt);
+void leer_opcion(int & opt){
+    printf("introduce una opcion: \n");
+    scanf("%d",& opt);
+}
